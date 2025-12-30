@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- saved from url=(0036)http://localhost:8000/index.html?a=2 -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<html>
+<head>
     <title>Lunar Retro-Alpha</title>
     <style>
         body { background: #050505; color: #33ff33; font-family: "Courier New", Courier, monospace; display: flex; flex-direction: column; align-items: center; height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; overflow: hidden; text-shadow: 0 0 5px rgba(51, 255, 51, 0.8); }
@@ -44,97 +44,16 @@
         <div id="map-label" style="margin-top: 10px;">MOTION RADAR</div>
         <canvas id="radar-canvas" width="16" height="16" style="width: 128px; height: 128px; image-rendering: pixelated; border: 1px solid #330000; background: #000;"></canvas>
     </div>
-    <div id="overlay" style="display: none;"><div id="overlay-content"><h1>LUNAR RETRO-ALPHA</h1><p>[ START MISSION ]</p></div></div>
-    <div id="terminal">Welcome to Lunar Retro-Alpha.
-Escape the 1955 Moon Base.
-
---- Observation Dome ---
-A majestic glass dome. The Earth hangs like a blue
-marble. Frost patterns crawl across the edges. An 
-emergency airlock wheel is here.
-
-Exits:
-- South: Communications Array
-
-[ HINT: You could 'unlock airlock' here. ]
-
-&gt; s
-
---- Communications Array ---
-Towering racks of vacuum tubes. The equipment here
-is mostly passive reception gear.
-You see a Control Board (Launch System) here.
-
-Exits:
-- North: Observation Dome
-- East: Security Hub
-
-
-&gt; e
-
---- Security Hub ---
-Banks of CRT monitors show grainy views of empty 
-corridors. A single central terminal is active 
-here.
-
-Exits:
-- South: Elevator Lobby Alpha
-- West: Communications Array
-
-
-&gt; terminal
-
-R-E-A-DY  MFUOTRH UIRN P6U0T0:0  TCEEMPN,T RAAILR 
-,I WNATETERFRA, CEP O--WE-
-R, EXIT
-
-&gt; help
-
-AVAILABLE DIAGNOSTICS: TEMP, AIR, WATER, POWER, AC
-TIVATE GENERATOR, EXIT
-
-&gt; temp
-
-&gt; INTERNAL TEMPERATURE: 19.4 C
-&gt; EXTERNAL TEMPERATURE: -153.2 C
-&gt; THERMAL REGULATORS: NOMINAL
-
-&gt; exxit
-
-COMMAND NOT RECOGNIZED. TYPE 'HELP' FOR OPTIONS.
-
-&gt; exit
-
-[ TERMINAL SESSION TERMINATED ]
-
---- Security Hub ---
-Banks of CRT monitors show grainy views of empty 
-corridors. A single central terminal is active 
-here.
-
-Exits:
-- South: Elevator Lobby Alpha
-- West: Communications Array
-
-
-&gt; s
-
---- Elevator Lobby Alpha ---
-Polished aluminium panels. A heavy elevator door 
-is here next to a call button. A maintenance 
-ladder leads down.
-
-Exits:
-- North: Security Hub
-- Down: Mess Hall
-
-[ HINT: You can 'summon elevator' here. ]
-
-&gt; summon
-You press the button. A distant hum begins to 
-vibrate through the floor.
-<span class="cursor"></span></div>
-    <div id="input-area" style="visibility: visible;">
+    <div id="overlay">
+        <div id="overlay-content">
+            <h1>LUNAR RETRO-ALPHA</h1>
+            <p>1955 Moon Base Escape</p>
+            <p style="margin-top: 40px; color: #666; font-size: 12px;">SYSTEMS LOADED</p>
+            <p style="margin-top: 10px;">[ CLICK TO INITIALIZE ]</p>
+        </div>
+    </div>
+    <div id="terminal"></div>
+    <div id="input-area">
         <span id="prompt">&gt;</span>
         <input type="text" id="command-input" autocomplete="off">
     </div>
@@ -621,5 +540,5 @@ vibrate through the floor.
         overlay.addEventListener('click', initialize);
         document.addEventListener('click', () => { if (overlay.style.display === 'none') input.focus(); });
     </script>
-
-</body></html>
+</body>
+</html>
