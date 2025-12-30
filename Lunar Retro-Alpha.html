@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Lunar Retro-Alpha</title>
     <style>
-        body { background: #050505; color: #33ff33; font-family: "Courier New", Courier, monospace; display: flex; flex-direction: column; align-items: center; height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; overflow: hidden; text-shadow: 0 0 5px rgba(51, 255, 51, 0.8); }
+        body { 
+            background: #050505; color: #33ff33; font-family: "Courier New", Courier, monospace; 
+            display: flex; flex-direction: column; align-items: center; 
+            height: 100vh; height: 100dvh; margin: 0; padding: 20px; box-sizing: border-box; 
+            overflow: hidden; text-shadow: 0 0 5px rgba(51, 255, 51, 0.8); 
+        }
         #terminal { 
-            width: 50ch; max-width: 100%; flex-grow: 1; overflow-y: auto; 
+            width: 100%; max-width: 80ch; flex-grow: 1; overflow-y: auto; 
             border: 1px solid #113311; padding: 20px; margin-bottom: 20px; 
             white-space: pre-wrap; position: relative; z-index: 1;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
@@ -27,14 +34,22 @@
         }
         .cursor { display: inline-block; width: 10px; height: 1.2em; background: #33ff33; vertical-align: middle; animation: blink 1s step-end infinite; }
         @keyframes blink { from, to { opacity: 1; } 50% { opacity: 0; } }
-        #map-container { position: absolute; top: 20px; right: 20px; text-align: center; z-index: 10; }
+        #map-container { position: absolute; top: 20px; right: 20px; text-align: center; z-index: 10; background: rgba(0,0,0,0.8); padding: 5px; border-radius: 4px; }
         #map-canvas { width: 128px; height: 128px; image-rendering: pixelated; border: 1px solid #333; background: #000; }
         #map-label { font-size: 10px; margin-bottom: 5px; color: #666; }
-        #input-area { width: 100%; max-width: 800px; display: flex; visibility: hidden; }
+        #input-area { width: 100%; max-width: 80ch; display: flex; visibility: hidden; padding-bottom: 10px; }
         #prompt { margin-right: 10px; }
-        #command-input { background: transparent; border: none; color: #33ff33; font-family: inherit; font-size: inherit; flex-grow: 1; outline: none; }
+        #command-input { background: transparent; border: none; color: #33ff33; font-family: inherit; font-size: inherit; flex-grow: 1; outline: none; width: 100%; }
         #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); display: flex; justify-content: center; align-items: center; z-index: 100; cursor: pointer; }
-        #overlay-content { text-align: center; border: 2px solid #0f0; padding: 40px; }
+        #overlay-content { text-align: center; border: 2px solid #0f0; padding: 40px; max-width: 90%; }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            #terminal { padding: 10px; font-size: 14px; }
+            #map-container { position: relative; top: 0; right: 0; display: flex; gap: 10px; margin-bottom: 10px; width: 100%; justify-content: center; }
+            #map-canvas, #radar-canvas { width: 80px; height: 80px; }
+            #map-label { display: none; }
+        }
     </style>
 </head>
 <body>
